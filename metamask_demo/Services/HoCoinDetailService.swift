@@ -11,6 +11,7 @@ import Foundation
 class HoCoinDetailService: ObservableObject {
     @Published var coinDetail: HoCoinDetail = HoCoinDetail.detailDefault
     
+    // hoho_todo: 暂时写死币种详情数据。后续开发可考虑以币种ID等信息作为请求参数，获取指定币种详细信息
     let api = "http://rap2api.taobao.org/app/mock/data/2267425"
     
     func fetchData(_ completion: @escaping (String?) -> Void) {
