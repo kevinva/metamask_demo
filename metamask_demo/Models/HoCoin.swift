@@ -7,13 +7,26 @@
 
 import Foundation
 
-struct HoCoin: Hashable, Codable {
+
+struct HoCoinSummary: Codable {
+    var coinId: Int
+    var icon: String
+    var name: String
+    var balance: Int
+}
+
+struct HoCoinDetail: Codable {
     var coinId: Int
     var icon: String
     var name: String
     var balance: Int
     var transactions: [HoTrade]
     
+    static let detailDefault = HoCoinDetail(coinId: 0,
+                                                icon: "",
+                                                name: "",
+                                                balance: 0,
+                                                transactions: [])
 }
 
 struct HoTrade: Codable {

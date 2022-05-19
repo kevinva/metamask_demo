@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871095A328366E490099354B /* HoUrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871095A228366E490099354B /* HoUrlImageView.swift */; };
+		871095A5283674220099354B /* HoCoinDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871095A4283674220099354B /* HoCoinDetailService.swift */; };
+		871095A7283679B90099354B /* HoWalletServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871095A6283679B80099354B /* HoWalletServiceTests.swift */; };
 		87B0C255283514CB0073D4E3 /* metamask_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C254283514CB0073D4E3 /* metamask_demoApp.swift */; };
 		87B0C257283514CB0073D4E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C256283514CB0073D4E3 /* ContentView.swift */; };
 		87B0C259283514D30073D4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B0C258283514D30073D4E3 /* Assets.xcassets */; };
 		87B0C25C283514D30073D4E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B0C25B283514D30073D4E3 /* Preview Assets.xcassets */; };
-		87B0C267283514D40073D4E3 /* metamask_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C266283514D40073D4E3 /* metamask_demoTests.swift */; };
 		87B0C272283514D40073D4E3 /* metamask_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C271283514D40073D4E3 /* metamask_demoUITests.swift */; };
 		87B0C2B8283639970073D4E3 /* HoCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C2B7283639970073D4E3 /* HoCoin.swift */; };
 		87B0C2BA283639C10073D4E3 /* HoWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C2B9283639C10073D4E3 /* HoWallet.swift */; };
 		87B0C2C028363A080073D4E3 /* HoWalletHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C2BF28363A080073D4E3 /* HoWalletHomeView.swift */; };
 		87B0C2C228363A1B0073D4E3 /* HoCoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C2C128363A1B0073D4E3 /* HoCoinDetailView.swift */; };
 		87B0C2C428363A370073D4E3 /* HoCoinAddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C2C328363A370073D4E3 /* HoCoinAddingView.swift */; };
+		87B0C2C8283648A10073D4E3 /* HoWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0C2C7283648A10073D4E3 /* HoWalletService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		871095A228366E490099354B /* HoUrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoUrlImageView.swift; sourceTree = "<group>"; };
+		871095A4283674220099354B /* HoCoinDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoCoinDetailService.swift; sourceTree = "<group>"; };
+		871095A6283679B80099354B /* HoWalletServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoWalletServiceTests.swift; sourceTree = "<group>"; };
 		87B0C251283514CB0073D4E3 /* metamask_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metamask_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B0C254283514CB0073D4E3 /* metamask_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metamask_demoApp.swift; sourceTree = "<group>"; };
 		87B0C256283514CB0073D4E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,7 +51,6 @@
 		87B0C25B283514D30073D4E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87B0C25D283514D30073D4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B0C262283514D40073D4E3 /* metamask_demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = metamask_demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		87B0C266283514D40073D4E3 /* metamask_demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metamask_demoTests.swift; sourceTree = "<group>"; };
 		87B0C268283514D40073D4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B0C26D283514D40073D4E3 /* metamask_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = metamask_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B0C271283514D40073D4E3 /* metamask_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metamask_demoUITests.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		87B0C2BF28363A080073D4E3 /* HoWalletHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoWalletHomeView.swift; sourceTree = "<group>"; };
 		87B0C2C128363A1B0073D4E3 /* HoCoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoCoinDetailView.swift; sourceTree = "<group>"; };
 		87B0C2C328363A370073D4E3 /* HoCoinAddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoCoinAddingView.swift; sourceTree = "<group>"; };
+		87B0C2C7283648A10073D4E3 /* HoWalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoWalletService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		871095A028366E0D0099354B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				871095A128366E0D0099354B /* Views */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		871095A128366E0D0099354B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				871095A228366E490099354B /* HoUrlImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		87B0C248283514CB0073D4E3 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +127,7 @@
 		87B0C253283514CB0073D4E3 /* metamask_demo */ = {
 			isa = PBXGroup;
 			children = (
+				871095A028366E0D0099354B /* Utils */,
 				87B0C295283551170073D4E3 /* Models */,
 				87B0C293283551170073D4E3 /* Services */,
 				87B0C294283551170073D4E3 /* Views */,
@@ -128,8 +151,8 @@
 		87B0C265283514D40073D4E3 /* metamask_demoTests */ = {
 			isa = PBXGroup;
 			children = (
-				87B0C266283514D40073D4E3 /* metamask_demoTests.swift */,
 				87B0C268283514D40073D4E3 /* Info.plist */,
+				871095A6283679B80099354B /* HoWalletServiceTests.swift */,
 			);
 			path = metamask_demoTests;
 			sourceTree = "<group>";
@@ -146,6 +169,8 @@
 		87B0C293283551170073D4E3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				87B0C2C7283648A10073D4E3 /* HoWalletService.swift */,
+				871095A4283674220099354B /* HoCoinDetailService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -299,11 +324,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B0C257283514CB0073D4E3 /* ContentView.swift in Sources */,
+				87B0C2C8283648A10073D4E3 /* HoWalletService.swift in Sources */,
 				87B0C2BA283639C10073D4E3 /* HoWallet.swift in Sources */,
+				871095A328366E490099354B /* HoUrlImageView.swift in Sources */,
 				87B0C2C428363A370073D4E3 /* HoCoinAddingView.swift in Sources */,
 				87B0C2C028363A080073D4E3 /* HoWalletHomeView.swift in Sources */,
 				87B0C2B8283639970073D4E3 /* HoCoin.swift in Sources */,
 				87B0C255283514CB0073D4E3 /* metamask_demoApp.swift in Sources */,
+				871095A5283674220099354B /* HoCoinDetailService.swift in Sources */,
 				87B0C2C228363A1B0073D4E3 /* HoCoinDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B0C267283514D40073D4E3 /* metamask_demoTests.swift in Sources */,
+				871095A7283679B90099354B /* HoWalletServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

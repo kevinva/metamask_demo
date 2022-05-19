@@ -11,6 +11,10 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
+        
+        HoUrlImageView(url: URL(string: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Dogecoin_Logo.png/150px-Dogecoin_Logo.png")!)
+            .scaledToFill()
+            .frame(width: 200, height: 200)
     }
 }
 

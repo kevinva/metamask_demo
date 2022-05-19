@@ -1,14 +1,14 @@
 //
-//  metamask_demoTests.swift
+//  HoWalletServiceTests.swift
 //  metamask_demoTests
 //
-//  Created by KevinHo on 2022/5/18.
+//  Created by KevinHo on 2022/5/19.
 //
 
 import XCTest
 @testable import metamask_demo
 
-class metamask_demoTests: XCTestCase {
+class HoWalletServiceTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -16,6 +16,15 @@ class metamask_demoTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func testFetchData() {
+        let expectation = XCTestExpectation(description: "")
+        HoWalletService().fetchData { errMsg in
+            expectation.fulfill()
+            XCTAssertNil(errMsg)
+        }
+        wait(for: [expectation], timeout: 20)
     }
 
     func testExample() throws {
