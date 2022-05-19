@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+struct HoWallet: Hashable, Codable {
+    var accountId: String
+    var accountName: String
+    var accountIcon: String
+    var accountBalance: Int
+    var coins: [HoCoin]
+}
