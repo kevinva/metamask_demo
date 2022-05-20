@@ -7,10 +7,14 @@
 
 import Foundation
 
+fileprivate let ETH_ID: Int = 110
+fileprivate let DOGE_ID: Int = 111
+fileprivate let LITE_ID: Int = 112
+
 class HoWalletService: ObservableObject {
-    @Published var wallet: HoWallet = HoWallet.defaultWallet
-    
     let api = "http://rap2api.taobao.org/app/mock/data/2267369"
+    
+    @Published var wallet: HoWallet = HoWallet.defaultWallet
     
     func fetchData(_ completion: @escaping (String?) -> Void) {
         guard let url = URL(string: api) else {
@@ -60,5 +64,17 @@ class HoWalletService: ObservableObject {
         }
         task.resume()
         
+    }
+    
+    static func isLite(for coinId: Int) -> Bool {
+        return coinId == LITE_ID
+    }
+    
+    static func isEth(for coinId: Int) -> Bool {
+        return coinId == ETH_ID
+    }
+    
+    static func isDoge(for coinId: Int) -> Bool {
+        return coinId == DOGE_ID
     }
 }

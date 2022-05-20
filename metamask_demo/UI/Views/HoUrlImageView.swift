@@ -10,14 +10,16 @@ import SwiftUI
 struct HoUrlImageView: View {
 
     @ObservedObject private var imageLoader: Loader
+    private var placeHolderName: String
     
     var image: UIImage? {
         let result = imageLoader.data.flatMap(UIImage.init)
         return result
     }
     
-    init(url: URL) {
+    init(url: URL, placeHolder: String = "") {
         self.imageLoader = Loader(url)
+        self.placeHolderName = placeHolder
     }
 
     var body: some View {
@@ -26,7 +28,13 @@ struct HoUrlImageView: View {
                 Image(uiImage: uiImage)
                     .resizable()
             } else {
-                EmptyView()
+                if !(placeHolderName.isEmpty) {
+                    Image(placeHolderName)
+                        .resizable()
+                } else {
+                    EmptyView()
+                }
+                
             }
         }
     }

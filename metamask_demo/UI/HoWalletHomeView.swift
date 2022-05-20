@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HoWalletHomeView: View {
+    @StateObject var service: HoWalletService = HoWalletService()
+    
     var body: some View {
         VStack {
+            // 顶部：导航栏
             HStack(alignment: .top, spacing: 0) {
                 Button(action: {}) {
                     Image(systemName: "ellipsis.circle")
@@ -28,24 +31,32 @@ struct HoWalletHomeView: View {
                 
             }.frame(width: UIScreen.main.bounds.width, height: 60)
             
-            HoUrlImageView(url: URL(string: "https://avatars.githubusercontent.com/u/1279449?s=400&u=e81d6d9384a279faba5ba8ef5d6ff55d286ad6ba&v=4")!)
-                .frame(width: 80, height: 80, alignment: .center)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.blue, lineWidth: 2))
-                .padding()
+            // 中部：账户头像，名字，余额，账户Id
+            if let iconUrl = URL(string: service.wallet.accountIcon) {
+                HoUrlImageView(url: iconUrl)
+                    .frame(width: 80, height: 80, alignment: .center)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.blue, lineWidth: 2))
+                    .padding()
+            } else {
+                ProgressView()
+                    .frame(width: 80, height: 80, alignment: .center)
+            }
+
             
-            Text("Account 1").font(.title)
+            Text(service.wallet.accountName).font(.title)
             
-            Text("$0")
+            Text("$ \(service.wallet.accountBalance)")
                 .font(.system(size: 12))
                 .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
             
-            Text("0x8129318293")
+            Text(service.wallet.accountId)
                 .frame(width: 200, height: 36)
                 .background(Color(red: 100.0 / 255, green: 149.0 / 255, blue: 237.0 / 255))
                 .cornerRadius(18)
                 .padding()
             
+            // 账户功能按钮
             HStack {
                 Spacer()
                 HoAccountButon(imageName: "arrow.turn.down.right", title: "Receive")
@@ -58,21 +69,22 @@ struct HoWalletHomeView: View {
                 Spacer()
             }
 
-            // 去掉tableView分隔线，要适配iOS版本
+            // 底部：币种列表
+            // 隐藏tableView分隔线，要适配iOS版本
             if #available(iOS 14.0, *) {
                 ScrollView {
                     LazyVStack(content: {
-                        ForEach(0..<3, id: \.self) { count in
-                            HoCoinCell()
+                        ForEach(service.wallet.coins, id: \.coinId) { coin in
+                            HoCoinCell(coin)
                         }
-                        
+
                         HoAddCoinTipsCell()
                     })
                 }
             } else {
                 List {
-                    ForEach(0..<3) { index in
-                        HoCoinCell()
+                    ForEach(service.wallet.coins, id: \.coinId) { coin in
+                        HoCoinCell(coin)
                     }
                 
                     HoAddCoinTipsCell()
@@ -82,9 +94,15 @@ struct HoWalletHomeView: View {
 
             Spacer()
         }
+        .onAppear {
+            service.fetchData { errMsg in
+                
+            }
+        }
     }
 }
 
+// 用于隐藏tableView分隔线
 struct HoListRemoveSeparator: ViewModifier {
     func body(content: Content) -> some View {
         content

@@ -9,14 +9,10 @@ import SwiftUI
 
 @main
 struct metamask_demoApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear {
-                    HoCoinDetailService().fetchData { errMsg in
-                        
-                    }
-                }
         }
     }
 }

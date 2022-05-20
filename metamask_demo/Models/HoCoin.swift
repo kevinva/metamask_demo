@@ -13,6 +13,8 @@ struct HoCoinSummary: Codable {
     var icon: String
     var name: String
     var balance: Int
+    
+    static let summaryDefault = HoCoinSummary(coinId: 0, icon: "", name: "", balance: 0)
 }
 
 struct HoCoinDetail: Codable {

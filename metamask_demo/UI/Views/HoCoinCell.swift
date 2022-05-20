@@ -8,20 +8,38 @@
 import SwiftUI
 
 struct HoCoinCell: View {
+    var coinSummary: HoCoinSummary
+    var imagePlaceHolder: String = ""
+    
+    init(_ summary: HoCoinSummary) {
+        coinSummary = summary
+        
+        if (HoWalletService.isEth(for: coinSummary.coinId)) {
+            imagePlaceHolder = "eth_icon"
+        } else if (HoWalletService.isDoge(for: coinSummary.coinId)) {
+            imagePlaceHolder = "doge_icon"
+        } else if (HoWalletService.isLite(for: coinSummary.coinId)) {
+            imagePlaceHolder = "lite_icon"
+        }
+    }
+    
     var body: some View {
         HStack {
-            Image("eth_icon")
-                .resizable()
-                .frame(width: 40, height: 40)
-                .scaledToFit()
-                .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 0))
+            if let iconUrl = URL(string: coinSummary.icon) {
+
+                HoUrlImageView(url: iconUrl, placeHolder: imagePlaceHolder)
+                    .frame(width: 40, height: 40)
+                    .cornerRadius(20.0)
+                    .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 0))
+            } else {
+                ProgressView()
+            }
             
             VStack(alignment: .leading) {
-                Text("0 ETH")
+                Text(coinSummary.name)
                     .font(.title2)
-                Text("$0")
+                Text("$\(coinSummary.balance)")
                     .font(.system(size: 14))
-                    
             }
             .padding()
             
@@ -37,7 +55,7 @@ struct HoCoinCell: View {
 
 struct HoCoinCell_Previews: PreviewProvider {
     static var previews: some View {
-        HoCoinCell()
+        HoCoinCell(HoCoinSummary.summaryDefault)
             .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 70))
     }
 }
