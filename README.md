@@ -100,7 +100,7 @@ It only retrieves content from a server for data presentation. You can check the
 
 ![images/page1-2.png](images/page1-2.png)
 
-3. Return to wallet home page, click "Import tokens" in the last list item, then coin adding page will be presented.
+3. Return to wallet home page, click "Import Tokens" button in the last list item, then coin adding page will be presented.
 
 ![images/page1-3.png](images/page1-3.png)
 
