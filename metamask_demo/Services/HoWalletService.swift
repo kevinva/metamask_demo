@@ -12,7 +12,7 @@ fileprivate let DOGE_ID: Int = 111
 fileprivate let LITE_ID: Int = 112
 
 class HoWalletService: ObservableObject {
-    let api = "http://rap2api.taobao.org/app/mock/data/2267369"
+    private let api = "http://rap2api.taobao.org/app/mock/data/2267369"
     
     @Published var wallet: HoWallet = HoWallet.defaultWallet
     

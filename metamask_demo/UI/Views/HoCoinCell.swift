@@ -19,7 +19,7 @@ struct HoCoinCell: View {
         } else if (HoWalletService.isDoge(for: coinSummary.coinId)) {
             imagePlaceHolder = "doge_icon"
         } else if (HoWalletService.isLite(for: coinSummary.coinId)) {
-            imagePlaceHolder = "lite_icon"
+            imagePlaceHolder = "litecoin_icon"
         }
     }
     

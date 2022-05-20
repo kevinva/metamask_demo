@@ -25,10 +25,10 @@ struct HoCoinDetail: Codable {
     var transactions: [HoTrade]
     
     static let detailDefault = HoCoinDetail(coinId: 0,
-                                                icon: "",
-                                                name: "",
-                                                balance: 0,
-                                                transactions: [])
+                                            icon: "",
+                                            name: "",
+                                            balance: 0,
+                                            transactions: [])
 }
 
 struct HoTrade: Codable {
@@ -36,4 +36,6 @@ struct HoTrade: Codable {
     var time: Int
     var amount: Int
     var desc: String
+    
+    static let tradeDefault = HoTrade(tradeId: 0, time: 0, amount: 0, desc: "")
 }
