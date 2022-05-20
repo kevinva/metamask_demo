@@ -8,19 +8,34 @@
 import SwiftUI
 
 struct HoCoinDetailView: View {
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode
     
     @StateObject private var service = HoCoinDetailService()
     
     var body: some View {
         VStack {
-            // 顶部：导航栏
+            // 顶部：自定义导航栏
             HStack(alignment: .top, spacing: 0) {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "chevron.backward")
+                })
+                .padding()
+                
                 Spacer()
                 
                 HoNavTitleView(title: service.coinDetail.name, subTitle: "Ethereum Main Network")
                 
                 Spacer()
+                
+                // 这个空Button只是为了让HoNavTitleView居中
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Text("")
+                })
+                .background(Color.clear)
+                .padding()
+                
             }.frame(width: UIScreen.main.bounds.width, height: 60)
             
             // 中部：币种icon，名字，余额
@@ -79,6 +94,7 @@ struct HoCoinDetailView: View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
         .onAppear {
             // hoho_todo: 暂时写死币种详情数据。后续开发可考虑以币种ID等信息作为请求参数，获取指定币种详细信息
             service.fetchData { errMsg in

@@ -13,7 +13,7 @@ struct HoWalletHomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // 顶部：导航栏
+                // 顶部：自定义导航栏
                 HStack(alignment: .top, spacing: 0) {
                     Button(action: {}) {
                         Image(systemName: "ellipsis.circle")
@@ -104,7 +104,6 @@ struct HoWalletHomeView: View {
                 Spacer()
             }
             .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
         }
         .onAppear {
             service.fetchData { errMsg in
