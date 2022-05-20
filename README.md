@@ -79,24 +79,30 @@ And it can be checked in this mock api from the server:
 Currently, the application only has three pages.
 
 * Wallet home page:
-![./images/image1.png](./images/image1.png)
+
+![images/image1.png](images/image1.png)
 
 * Coin detail page:
-![./images/image3.png](./images/image3.png)
+
+![images/image3.png](images/image3.png)
 
 * Coin Adding page:
-![./images/image2.png](./images/image2.png)
+
+![images/image2.png](images/image2.png)
 
 It only retrieves content from a server for data presentation. You can check these by following instruction:
 
-1. After application launch, it will stay at wallet home page
-![./images/image1.png](./images/image1.png)
+1. After application launch, it will stay at wallet home page.
+
+![images/image1.png](images/image1.png)
 
 2. Click the coin list item, then coin detail page will be pushed.
-![./images/page1-2.png](./images/page1-2.png)
+
+![images/page1-2.png](images/page1-2.png)
 
 3. Return to wallet home page, click "Import tokens" in the last list item, then coin adding page will be presented.
-![./images/page1-3.png](./images/page1-3.png)
+
+![images/page1-3.png](images/page1-3.png)
 
 
 
