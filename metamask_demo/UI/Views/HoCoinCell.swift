@@ -38,8 +38,10 @@ struct HoCoinCell: View {
             VStack(alignment: .leading) {
                 Text(coinSummary.name)
                     .font(.title2)
+                    .foregroundColor(.black)
                 Text("$\(coinSummary.balance)")
                     .font(.system(size: 14))
+                    .foregroundColor(.black)
             }
             .padding()
             

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HoCoinDetailView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
+    @Environment(\.presentationMode) private var presentationMode
     @StateObject private var service = HoCoinDetailService()
     
     var body: some View {

@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct HoAddCoinTipsCell: View {
+    @Binding var isTap: Bool
+    
     var body: some View {
         HStack {
             Spacer()
             
             VStack(alignment: .center) {
                 Text("Don't see your token?")
-                Button(action: {}) {
+                Button(action: {
+                    isTap.toggle()
+                }) {
                     Text("Import Tokens")
                 }
                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
@@ -28,8 +32,10 @@ struct HoAddCoinTipsCell: View {
 }
 
 struct HoAddCoinTipsCell_Previews: PreviewProvider {
+    @State static var isTap: Bool = false
+    
     static var previews: some View {
-        HoAddCoinTipsCell()
+        HoAddCoinTipsCell(isTap: $isTap)
             .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 70))
     }
 }

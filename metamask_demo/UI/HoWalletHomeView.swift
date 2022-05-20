@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HoWalletHomeView: View {
     @StateObject private var service: HoWalletService = HoWalletService()
+    @State var addCoinPresented: Bool = false
     
     var body: some View {
         NavigationView {
@@ -44,7 +45,6 @@ struct HoWalletHomeView: View {
                         .frame(width: 80, height: 80, alignment: .center)
                 }
 
-                
                 Text(service.wallet.accountName).font(.title)
                 
                 Text("$ \(service.wallet.accountBalance)")
@@ -78,12 +78,14 @@ struct HoWalletHomeView: View {
                             ForEach(service.wallet.coins, id: \.coinId) { coin in
                                 NavigationLink(
                                     destination: HoCoinDetailView(),
+                                    
                                     label: {
                                         HoCoinCell(coin)
                                     })
                             }
 
-                            HoAddCoinTipsCell()
+                            HoAddCoinTipsCell(isTap: $addCoinPresented)
+                               
                         })
                     }
                 } else {
@@ -96,7 +98,8 @@ struct HoWalletHomeView: View {
                                 })
                         }
                     
-                        HoAddCoinTipsCell()
+                        HoAddCoinTipsCell(isTap: $addCoinPresented)
+                        
                     }
                     .modifier(HoListRemoveSeparator())
                 }
@@ -105,6 +108,9 @@ struct HoWalletHomeView: View {
             }
             .navigationBarHidden(true)
         }
+        .fullScreenCover(isPresented: $addCoinPresented, content: {
+            HoCoinAddingView(isShowCoinAddingView: $addCoinPresented)
+        })
         .onAppear {
             service.fetchData { errMsg in
                 
